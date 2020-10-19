@@ -1453,7 +1453,7 @@ install_wings() {
     fi
 
     if [[ ( "$lsb_dist" =  "centos" ||  "$lsb_dist" =  "rhel" ) && "$dist_version" = "8" ]]; then
-    	curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/scripts/get-docker.sh | sudo bash
+    	curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/main/scripts/get-docker.sh | sudo bash
     else
         output "Installing Docker"
         curl -sSL https://get.docker.com/ | CHANNEL=stable bash
@@ -1504,7 +1504,7 @@ install_daemon() {
     fi
 
     if [[ ( "$lsb_dist" =  "centos" ||  "$lsb_dist" =  "rhel" ) && "$dist_version" = "8" ]]; then
-    	curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/scripts/get-docker.sh | sudo bash
+    	curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/main/scripts/get-docker.sh | sudo bash
     else
         output "Installing Docker"
         curl -sSL https://get.docker.com/ | CHANNEL=stable bash
@@ -1846,7 +1846,7 @@ firewall(){
         yum -y install iptables
     fi
 
-    curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/scripts/iptables-no-prompt.sh | sudo bash
+    curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/main/scripts/iptables-no-prompt.sh | sudo bash
     block_icmp
     javapipe_kernel
     output "Setting up Fail2Ban..."
@@ -1960,7 +1960,7 @@ javapipe_kernel(){
     output "[2] No."
     read javapipe
     case $javapipe in
-        1)  sh -c "$(curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/scripts/javapipe_kernel.sh)"
+        1)  sh -c "$(curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/main/scripts/javapipe_kernel.sh)"
             ;;
         2)  output "JavaPipe kernel modifications not applied."
             ;;
@@ -2166,7 +2166,7 @@ case $installoption in
         fi
         theme
             ;;
-        21)  curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/scripts/mariadb-104.sh | sudo bash
+        21)  curl -sSL https://raw.githubusercontent.com/Incrility/Ptero/main/scripts/mariadb-104.sh | sudo bash
             ;;
         22)  database_host_reset
             ;;
